@@ -8,8 +8,7 @@ class LoggerFactory {
         LoggerFactory.defaultCustomContextBuilder = defaultCustomContextBuilder;
     }
     static createLogger(name, customContextBuilder) {
-        const stream = undefined;
-        stream.pipe(process.stdout);
+        const stream = process.stdout;
         const bunyanLogger = Logger.createLogger({
             name,
             serializers: {
