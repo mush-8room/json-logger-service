@@ -16,8 +16,7 @@ export class LoggerFactory {
     name: string,
     customContextBuilder?: CustomContextBuilderInterface
   ): JsonLogger {
-    let stream = undefined;
-    stream.pipe(process.stdout);
+    const stream = process.stdout;
 
     const bunyanLogger = Logger.createLogger({
       name,
